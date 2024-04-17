@@ -30,3 +30,23 @@ CSS: margin, margin-top, margin-right, margin-bottom, margin-left
 
 Cajas inline: <span> </span>
 Cajas en bloque: <div> </div>
+_______________________________________
+
+17-04
+"box-sizing: border-box" -> para incluir el padding dentro del ancho total
+En css, para definir estilos: .clase // #id // elemento  (sin nada delante)// * (para todo el doc)
+
+para elementos que tengan varias clases: junto (ej: .imagen.galeria{})
+para elementos hijos de una clase separado (ej: .imagen.galeria .gente{})
+
+Normalmente, para que ignore los márgenes y paddings y tal que añaden los navegadores
+* {
+    box-sixing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+Si después queremos añadirle margin o padding a algun elemento, como siempre manda lo más específico, priorizará esta info sobre la de 0px.
+
+
+
