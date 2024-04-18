@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox </title>
+    <style>
+        .box {
+            height:100px;
+            width: 100px;
+            background-color: #eb9d37;
+            border: solid 2px black;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .doublebox {
+            width: 200px;
+        }
+
+        .flexx {
+            display: flex;
+            gap: 4px;
+            
+            color: white;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+
+        }
+
+        .ej1 {
+            /* flex-direction: row;
+            flex-direction: row-reverse;
+            flex-direction: column; */
+            flex-direction: column-reverse;
+        }
+
+        .ej2 {
+            /* flex-wrap: nowrap;
+            flex-wrap: wrap; */
+            flex-wrap: wrap-reverse;
+        }
+
+        .ej3 {
+            /* justify-content: center;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: space-between; */
+            justify-content: space-around;
+            /* justify-content: space-evenly; */
+        }
+
+        .ej4 {
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+            align-items: stretch;
+            align-items: baseline;
+        }
+
+        .purplebox {
+            background-color: purple;
+            padding: 5px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Flexbox</h3>
+    <h4>Flex-direction</h4>
+    <div class="flexx ej1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <h4>Flexwrap</h4>
+    <div class="flexx ej2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box doublebox">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <h4>justify-content</h4>
+    <div class="flexx ej3 purplebox">
+        <div class="box doublebox">1</div>
+        <div class="box">2</div>
+        <div class="box doublebox">3</div>
+    </div>
+    <h4>align-items</h4>
+    <div class="flexx ej4 purplebox">
+        <div class="box doublebox">1</div>
+        <div class="box">2</div>
+        <div class="box doublebox">3</div>
+    </div>
+</body>
+</html>
+
+*FLEXGROW > width
+*box-shadow: sombra proyectada (se establecen los px y el color) // Si añadimos "inset" delante de los parametros se hace la sombra interior.
+www.codemyui.com 
+codingfantasy.com/games/flexboxadventure/play 
+* "align-content" determina el espacio entre las líneas, mientras que align-items determina como los elementos en su conjunto están alineados dentro del contenedor. Cuando hay solo una línea, "align-content" no tiene efecto.
