@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Navbar Top</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            text-decoration: none;
+        }
+
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 10px 20px;
+
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* .menu li {
+            /* margin-right: 20px; es lo mismo que el gap
+        } */
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 10px;
+            background-color: #333;
+            left: -10px;
+            top: 100%;
+        }
+
+        .dropdown-menu li {
+            list-style-type: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="./" class="logo">Logo</a>
+        <ul class="menu">
+            <li>
+                <a href="">Inicio</a>
+            </li>
+            <li>
+                <a href="">Nosotros</a>
+            </li>
+            <li class="dropdown">
+                <a href="#">Servicios</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Servicio 1</a></li>
+                    <li><a href="#">Servicio 2</a></li>
+                    <li><a href="#">Servicio 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main"></div>
+</body>
+
+</html>
