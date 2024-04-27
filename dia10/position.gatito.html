@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img {
+            opacity: 0.3;
+            width: 100%;
+        }
+
+        .container {
+            width: 300px;
+            position: relative;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topleft {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .topright {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        .bottomleft {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        .bottomright {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+    
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDQh4kO9tSapj3W3HPCQpObuWxM3p4LuR5ee-e-3pq-g&s" alt="Gatito">
+    <div class="center">Center</div>
+    <div class="topleft">Arriba-izq</div>
+    <div class="topright">Arriba-der</div>
+    <div class="bottomleft">Abajo-izq</div>
+    <div class="bottomright">Abajo-der</div>
+</div>
+
+</body>
+</html>

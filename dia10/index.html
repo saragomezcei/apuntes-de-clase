@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .yellow {
+            background-color: yellow;
+            top: 20px;
+            left: 20px;
+        }
+
+        .static {
+            position: static;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        .sticky {
+            position: sticky;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Position STATIC</h2>
+    <p>Esta posición es la posición por default. No se aplica ninguna posición de position. Se muestra en el flujo
+        normal del documento</p>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow static">Static</div>
+        <div class="box"></div>
+    </div>
+
+    <h2>Position RELATIVE</h2>
+    <p>Sí afecta el position (Top-Left-Right-Bottom). <br>
+        Ocupa espacio en la página, aunque el elemento se mueva, el espacio en el que está (en teoria) no es ocupado por
+        ningún otro elemento</p>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow relative">Relative</div>
+        <div class="box"></div>
+    </div>
+
+    <h2>Position ABSOLUTE</h2>
+    <p>Sí afecta el position (Top-Left-Right-Bottom). <br>
+        No ocupa espacio extra. Se posiciona respecto al padre más cercano que tenga una propiedad de position DISTINTA
+        a STATIC</p>
+    <div class="container" style="position:relative" ;>
+        <div class="box"></div>
+        <div class="box yellow absolute">Absolute</div>
+        <div class="box"></div>
+    </div>
+
+    <h2>Position FIXED</h2>
+    <p>Sí afecta el position (Top-Left-Right-Bottom). <br>
+        No ocupa espacio. Se posiciona con respecto a la ventana del navegador <br>
+        Se mantiene fijo en la pantalla y no se mueve con el scroll.</p>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow fixed" style="left:unset; right: 20px; top: unset; bottom: 20px;">Fixed</div>
+        <div class="box" style="height: 1000px;"></div>
+    </div>
+
+    <h2>Position STICKY</h2>
+    <p>Sí afecta el position (Top-Left-Right-Bottom). <br>
+        Sí ocupa espacio. Se posiciona con respecto a la ventana del navegador <br>
+        Se mantiene fijo en la pantalla y se queda fijo en pantalla hasta que el elemento padre se va.</p>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow sticky">Sticky</div>
+        <div class="box" style="height: 2000px;"></div>
+    </div>
+</body>
+
+</html>
