@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+
+<body>
+
+    <h1>Formularios</h1>
+
+    <!--atributos
+"action" : a quién le mando la info
+"method" : tipo de request. los más comunes son GET (por defecto) y POST. Cómo le voy a mandar la info
+    método GET: límite de 2048caracteres. Público, a través de URL
+    método POST: por defecto hasta 32mb. Privado, a través del body, no se ve y no se puede compartir
+
+    TIPOS DE INPUT
+
+    html 4.0:
+    submit, reset, text, password, file, image, hidden
+
+    html5: button, number, search (pero no se usa), url, email, date, time, color range
+
+    html5.1: month, week, date-timelocal (fecha y hora)
+
+    name: identificador único de la variable
+    IMPORTANTE!!!! Darle un name ÚNICO a cada input para que funcione, si no no funciona
+
+    value: valor inicial/por defecto
+
+    required: campo obligatorio
+    placeholder: mensaje al usuario (no confundir con el value)
+
+    size: tamaño de la caja (mejor no usar y configurar con css)
+
+    maxlength: nº max de caracteres
+
+    autofocus: resaltar automaticamente el input elegido al entrar a la pag. Normalmente el primero. Permite utilizar completamente el teclado, no necesitas tocar el ratón (guaxi para UX / Accesibilidad)
+
+    disabled: desactivar campo OJO!! En paginas autorrelleno con el inspeccionador se puede volver a activar
+    
+    password: oculta el texto. OJO!! En paginas autorrelleno con el inspeccionador se puede ver
+
+    number: solo deja escribir numeros
+
+    min/max: define los valores minimos y maximos
+
+    step: saltos entre valores. Ej: Step 20 aumentara o disminuira 20numeros. Step 0.1 te deja poner decimales.
+
+    date: fecha
+    
+    time: hora
+
+    RADIOBUTTONS - Importante que tengan el mismo nombre
+
+-->
+
+    <form action="./recibirForm.php" method="get">
+
+        <input type="text" name="usuario" value="maria" required autofocus>
+        <input type="text" name="clave" value="1234">
+
+        <h3>User</h3>
+
+        <input type="text" placeholder="Ingrese su nombre..." maxlength="5"> 
+        <h3>BOTON ENVIAR</h3>
+
+        <input type="button" value="Enviar formulario/Aquí puedo cambiar el texto del boton"> PARA ESTO MEJOR UTILIZAR
+        BOTONES
+
+        <button type="submit">
+            <h3>Enviar</h3>
+        </button> No hace falta que tenga type="submit", por defecto un boton dentro de un formulario es type="submit"
+
+        <h3>Botones especiales</h3>
+
+        <input type="button" value="NoEnvia">
+        <button type="button" onclick="Saludar()">No envia pero saluda</button>
+
+        <input type="reset" value="Resetear"> Resetea el formulario al estado inicial, limpia los campos y si alguno
+        tiene valor por defecto lo vuelve a poner.
+        Cuando rellenamos un formulario y al enviar se "limpian" los campos, es porque al enviarlo estamos volviendo a "request" la pagina, es como si actualizaramos.
+
+    </form>
+
+    <script>
+        //Primer JavaScript :')//
+        function Saludar() {
+            alert("HOLA");
+        }
+    </script>
+
+</body>
+
+</html>
