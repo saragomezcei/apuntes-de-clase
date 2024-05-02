@@ -47,6 +47,10 @@ Normalmente, para que ignore los márgenes y paddings y tal que añaden los nave
 }
 
 Si después queremos añadirle margin o padding a algun elemento, como siempre manda lo más específico, priorizará esta info sobre la de 0px.
+_____________________02/may
 
-
+"La Web Semántica es un enfoque para organizar y presentar información en la web de
+una manera que las computadoras puedan comprender el significado y el contexto de
+los datos, facilitando así la colaboración y el intercambio de información entre diferentes
+sistemas y usuarios.
 
