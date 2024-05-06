@@ -51,14 +51,14 @@
                     <li class="section__li">La tercera columna cuenta los elementos o tags (p, input, body, div) o pseudoelementos (::before, ::after)</li>
                 </ul>
 
-                <h4 class="section__title4">Cómo se calcula:</h4>
+                <h4 class="section__h4">Cómo se calcula:</h4>
                 Para decidir qué regla se aplica, se considera primero el valor más alto de la primera columna, después el de la segunda, y después el de la tercera. Los "inline styles" tienen preferencia sobre los de la hoja de estilos, y el "!important" sobre este (Pero no es recomendable su utilización).
 
                 Calculadora:
-                https://specificity.keegan.st/
+                <a href="https://specificity.keegan.st/" class="link">https://specificity.keegan.st/</a>
                 
                 Gráfica de specificidad:
-                https://jonassebastianohlsson.com/specificity-graph/
+                <a href="https://jonassebastianohlsson.com/specificity-graph/" class="link">https://jonassebastianohlsson.com/specificity-graph/</a>
             </p>
         </section>
 
@@ -71,13 +71,13 @@
 
                 Ejemplo: .bloque__elemento--modificador
 
-                <h4 class="section__title4">Bloques</h4>
+                <h4 class="section__h4">Bloques</h4>
                 Los bloques son cajas que por sí solas tienen sentido: header, container, checkbox, boton, footer, menu...
 
-                <h4 class="section__title4">Elementos</h4>
+                <h4 class="section__h4">Elementos</h4>
                 Los elementos son partes de un bolque que no tienen sentido por sí mismos. Ejemplo: menu item, list item, list title, checkbox caption, header title... 
                 
-                <h4 class="section__title4">Modificadores</h4>
+                <h4 class="section__h4">Modificadores</h4>
                 Son variantes de la apariencia o comportamiento de un bloque o elemento: "disabled", "hightlighted", "checked", "size big", "color red"
 
                 Ejemplo: class="header__li--disabled"
@@ -88,10 +88,14 @@
     <footer class="footer">
         <h3 class="footer__title">RRSS</h3>
         <ul class="footer__ul">
-            <li class="footer__li"><a class="footer__a" href="#">FB</a></li>
-            <li class="footer__li"><a class="footer__a" href="#">IG</a></li>
-            <li class="footer__li"><a class="footer__a" href="#">X</a></li>
+            <li class="footer__li"><a class="footer__rrss" href="#">FB</a></li>
+            <li class="footer__li"><a class="footer__rrss" href="#">IG</a></li>
+            <li class="footer__li"><a class="footer__rrss" href="#">X</a></li>
         </ul>
+        <ul class="footer__ul">
+            <li class="footer__li"></li>
+                <li class="footer__li"><a href="#" class="link">Términos y condiciones</a></li>
+           <li class="footer__li">
     </footer>
 
 </body>
