@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 16 - BEM</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">CEI</h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li"><a class="header__a" href="#">Section 1</a></li>
+                <li class="header__li header__li--selected"><a class="header__a" href="#">Section 2</a></li>
+                <li class="header__li"><a class="header__a" href="#">Section 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section">
+            <h3 class="section__title">Nombres de variables y selectores</h3>
+            <p class="section__p">
+                Tipos de nombres:
+            <ul class="section__ul">
+                <li class="section__li">UPPERCASE: ".MICLASE"</li>
+                <li class="section__li">lowercase: ".miclase"</li>
+                <li class="section__li">PascalCase: ".MiClase"</li>
+                <!-- La primera letra de cada palabra en mayúscula-->
+                <li class="section__li">camelCase: ".miClase"</li>
+                <!--Todas las palabras empiezan por mayúscula excepto la primera, si fuera más largo seria: .soyUnaClaseCamelCase-->
+                <li class="section__li">kebab-case: ".kebab-case"</li>
+                <!--Utiliza espacios en forma de guión. SOLO EN MINÚSCULAS. NO SE PUEDE UTILIZAR EN JAVASCRIPT-->
+                <li class="section__li">snake_case: ".snake_case"</li>
+                <!--Utiliza espacios en forma de guión bajo SOLO EN MINÚSCULAS. Sí se puede utilizar en JavaScript-->
+            </ul>
+            </p>
+        </section>
+        
+        <section class="section">
+            <h3 class="section__title">Especificidad</h3>
+            <p class="section__p">
+                La especificidad (specificity) es la forma en que los navegadores deciden qué regla de CSS se aplica a un elemento. Mientras más específica sea una regla, más importancia tendrá, pero también será más difícil de sobreescribir y mantener el código limpio.
+            </p>
+            <p class="section__p">
+                Los valores de especificidad se calculan en 3 columnas (0, 0, 0):
+                <ul class="section__ul">
+                    <li class="section__li">La primera columna representa los IDs: Por cada ID sumamos un valor al contador. Ej: (3, 0, 0)</li>
+                    <li class="section__li">La segunda columna cuenta las clases, atributos y pseudoclases (:hover, :root, required, :nth-child(odd)) POR SEPARADO, cada uno cuenta x1</li>
+                    <li class="section__li">La tercera columna cuenta los elementos o tags (p, input, body, div) o pseudoelementos (::before, ::after)</li>
+                </ul>
+
+                <h4 class="section__title4">Cómo se calcula:</h4>
+                Para decidir qué regla se aplica, se considera primero el valor más alto de la primera columna, después el de la segunda, y después el de la tercera. Los "inline styles" tienen preferencia sobre los de la hoja de estilos, y el "!important" sobre este (Pero no es recomendable su utilización).
+
+                Calculadora:
+                https://specificity.keegan.st/
+                
+                Gráfica de specificidad:
+                https://jonassebastianohlsson.com/specificity-graph/
+            </p>
+        </section>
+
+        <section class="section">
+            <h3 class="section__title">Metodología BEM</h3>
+            <p class="section__p">
+                getbem.com/naming 
+                Esta metodología se centra en Bloques - Elementos - Modificadores
+                Los nombres de las clases son en kebab-case, separando con __ los elementos y con -- los modificadores.
+
+                Ejemplo: .bloque__elemento--modificador
+
+                <h4 class="section__title4">Bloques</h4>
+                Los bloques son cajas que por sí solas tienen sentido: header, container, checkbox, boton, footer, menu...
+
+                <h4 class="section__title4">Elementos</h4>
+                Los elementos son partes de un bolque que no tienen sentido por sí mismos. Ejemplo: menu item, list item, list title, checkbox caption, header title... 
+                
+                <h4 class="section__title4">Modificadores</h4>
+                Son variantes de la apariencia o comportamiento de un bloque o elemento: "disabled", "hightlighted", "checked", "size big", "color red"
+
+                Ejemplo: class="header__li--disabled"
+
+            </p>
+        </section>
+    </main>
+    <footer class="footer">
+        <h3 class="footer__title">RRSS</h3>
+        <ul class="footer__ul">
+            <li class="footer__li"><a class="footer__a" href="#">FB</a></li>
+            <li class="footer__li"><a class="footer__a" href="#">IG</a></li>
+            <li class="footer__li"><a class="footer__a" href="#">X</a></li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

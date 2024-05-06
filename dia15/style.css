@@ -45,5 +45,10 @@ nav ul{
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    background-image:
+    linear-gradient(to right, #ffffff, transparent),
+    url("imgs/Imagen_cabecera.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
