@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+</head>
+<body>
+    <h1 class="title">Media Queries</h1>
+    
+    <section>
+    <h2>¿Qué son?</h2>
+    <p>
+        Declaración en CSS que nos permite definir como se va a visualizar nuestra web
+    </p>
+
+    <h2>Sintaxis</h2>
+    <p>Una MQ se compone de múltiples partes:
+        <ul>
+            <li>Keyword: <strong>@media</strong> // Es una palabra clave reservada</li>
+            <li>MediaType: un tipo de medida. (Usualmente "screen"/"print"/"all")</li>
+            <li>Operador/es: and/not/only</li>
+            <li>Breakpoints: condición a cumplirse (ejemplos: max-width, min-width...)</li>
+            <li>Reglas CSS: bloque de reglas</li>
+        </ul>
+        <style>
+            /* keyword MediaType Operador/es (breakpoint) { reglas de CSS } */
+
+            .title {
+                color: blue;
+            }
+
+            @media screen and (min-width: 600px) {
+                .title {
+                    color: red;
+                }
+            }
+
+            @media print {
+                .title {
+                    display: none;
+                }
+
+                h2 {
+                    color: green;
+                }
+            }
+        </style>
+    </p>
+
+    <h2>MediaType (Screen/Print)</h2>
+    <p>
+        - Print: destinado a material de vista de impresión <br>
+        - Screen: visualización normal, en pantalla a color (utilizado por defecto) <br>
+        - All: Todos los dispositivos <br>
+        - Otros tipos que ya no se usan: tv, handheld, speech, braile... <br>
+    </p>
+
+    <h3>Tips para utilizar MediaQueries</h3>
+    <ol>
+        <li>Los MQ sobreescriben las reglas de CSS anteriores, PERO no poseen mayor especifidad que las otras reglas, por lo que <strong>debemos agregarlas al final del documento.</strong></li>
+        <li>Debemos utilizar los mismos selectores que queremos reemplazar/modificar</li>
+        <li>Pensar bien los breakpoints</li>
+        <li>Podemos utilizar una @media para cada selector, o <strong>utilizar una sola para todos los selectores (recomendada)</strong></li>
+    </ol>
+
+    <h3>Mobile vs Tablet vs Desktop</h3>
+    <p>
+        Porcentaje de uso y medidas de pantalla: <br>
+        - Mobile: 55% // 320px - 768px <br>
+        - Tablet: 2% // 768px - 1024px<br>
+        - Desktop: 43% // 1024px - 1920px o más <br>
+
+        MOBILE FIRST. ¿Por qué? Es el dispositivo más utilizado. Es más "difícil" diseñar para mobile, porque la pantalla es más pequeña y tenemos menos espacio.
+    </p>
+
+    <style>
+        /* Mobile First*/
+        /* Reglas de Mobile */
+
+        .title {
+            color: red;
+        }
+        /* Tablets */
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .title {
+                color: blue;
+            }
+        }
+
+        /* Desktop */
+
+        @media (min-width: 1024px) {
+            .title {
+                color: green;
+            }
+        }
+
+    </style>
+
+    <h3>Uso de MQ en HTML</h3>
+    <p>
+        Podemos utilizar directamente MQ en el archivo HTML utilizando el atributo [media=""]. Antes que nada, debemos asegurarnos de que el head de nuestro HTML incluya la etiqueta meta de viewport <br>
+        (meta name="viewport" content="width=device-width, initial-scale=1.0") <br>
+
+        <ul>
+            <li>etiquetas de link: <br>
+                < link rel="stylesheet" href="./css/tablet.css" meta="screen and (min-width:768px)" >
+            </li>
+            <li>etiqueta en style: <br>
+            'style media="stylesheet"</li>
+            <li>
+                etiqueta de picture (recomendable) <br>
+                <picture>
+                    <source media="(min-width:650px)" srcset="img/mifoto_large.png">
+                    <source media="(min-width:450px)" srcset="img/mifoto_small.png">
+                    <img src="img/mifoto.png" alt="Mi Foto">
+                </picture>
+            </li>
+        </ul>
+    </p>
+
+    </section>
+
+Pág con texto en el medio que ponga "Mobile", "Tablet", "Desktop"
+Que cambie el texto y el color de fondo
+
+</body>
+</html>

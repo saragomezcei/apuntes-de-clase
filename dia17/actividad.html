@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Media Queries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Mobile */
+        .dispositive {
+            height: 100vh;
+            background-color: pink;
+            color: rgb(219, 28, 95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dispositive__mobile {
+            display: block;
+        }
+
+        .dispositive__tablet {
+            display: none;
+        }
+
+        .dispositive__desktop {
+            display: none;
+        }
+
+        .dispositive__img {
+            height: 100px;
+        }
+
+        @media (min-width: 768px) {
+
+            .dispositive {
+                height: 100vh;
+                background-color: rgb(192, 233, 255);
+                color: rgb(15, 40, 148);
+            }
+
+            .dispositive__mobile {
+                display: none;
+            }
+
+            .dispositive__tablet {
+                display: block;
+            }
+
+            .dispositive__desktop {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+
+            .dispositive {
+                height: 100vh;
+                background-color: rgb(216, 255, 192);
+                color: rgb(25, 95, 6);
+            }
+
+            .dispositive__mobile {
+                display: none;
+            }
+
+            .dispositive__tablet {
+                display: none;
+            }
+
+            .dispositive__desktop {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="dispositive">
+        <h1 class="dispositive__mobile">Mobile</h1>
+
+        <h1 class="dispositive__tablet">Tablet</h1>
+
+        <h1 class="dispositive__desktop">Desktop</h1>
+
+        <picture>
+            <source media="(min-width:768px) and (max-width: 1023px)"
+                srcset="https://www.stopandclick.es/wp-content/uploads/2022/03/iPad-Air-Azul-M1-1.png">
+            <source media="(min-width:1024px)"
+                srcset="https://png.pngtree.com/png-vector/20220415/ourmid/pngtree-imac-business-media-technology-vector-png-image_13109148.png">
+            <img class="dispositive__img"
+                src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_87283638/fee_786_587_png" alt="Mi Foto">
+        </picture>
+    </section>
+</body>
+
+</html>
