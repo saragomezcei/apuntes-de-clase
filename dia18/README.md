@@ -85,7 +85,7 @@ div {
 - `ease-in`: velocidad lenta - rápida
 - `ease-out`: velocidad rápida - lenta
 - `ease-in-out`: velocidad lenta-rápida-lenta, más brusco que ease
-- `cubic-bezier()`: Función de timing personalizada.
+- `cubic-bezier()`: Función de timing personalizada. (cubic-bezier.com para ver gráfico y valores numéricos)
 
 ```css
 .box {

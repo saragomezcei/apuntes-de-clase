@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s, height 2s, background-color 2s;
+}
+
+.box:hover {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s, height 2s, background-color 2s;
+}
+
+.box2:hover {
+    height: 500px;
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    background-color: cornflowerblue;
+
+    transition: all 1s;
+}
+
+.box3:hover {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: hotpink;
+    rotate: 360deg;
+    translate: 200px -200px;
+}

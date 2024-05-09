@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------- */
+/*  Inicio de estlos para el MODO CLARO  */
+/* ------------------------------------- */
+
+body {
+    background-color: white;
+    color: #333;
+}
+
+.contenido {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background: lightgray;
+    margin: 20px auto;
+
+}
+
+/* ------------------------------------- */
+
+
+/* -------------------------------------- */
+/*  Inicio de estlos para el MODO OSCURO  */
+/* -------------------------------------- */
+
+.modo-oscuro {
+    background-color: #333;
+    color: white;
+}
+
+.modo-oscuro .caja {
+    background-color: #222;
+}

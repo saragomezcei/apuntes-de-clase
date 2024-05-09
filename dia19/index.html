@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modo claro / Modo oscuro</title>
+</head>
+
+<body>
+    <main class="contenido">
+
+        <h1>Nuestra primera web inteligente</h1>
+        <img src="" alt="">
+        <div class="caja">Contenido</div>
+
+        <button id="modoClaroOscuro">Modo oscuro</button>
+    </main>
+
+    <script>
+
+        const btn = document.querySelector("#modoClaroOscuro");
+        const elbody = document.querySelector("body");
+
+        btn.addEventListener("click", () => {
+
+            elbody.classList.toggle("modo-oscuro");
+
+        });
+    </script>
+</body>
+
+</html>
+<!-- variable: es un elemento que guarda información. Tenemos variables que pueden variar, y otras (constantes) que no se pueden modificar -->
