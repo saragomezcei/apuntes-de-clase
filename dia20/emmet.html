@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de shortcuts</title>
+</head>
+
+<body>
+    <!-- 
+        https://docs.emmet.io/cheat-sheet/
+        
+        Emmet:
+        [>] dentro de la caja
+        [.] clases
+        [#] id
+        [+] hermanos/sibblings
+        [*] multiplicador (cuántos elementos de este tipo quiero)
+        [{}] contenido/texto
+        [$] dentro del contenido para numerar automáticamente
+        [lorem] generador de texto falso
+        [loremX] (donde X es un número) generador de texto falso con X palabras
+        [lorem*X] generador de texto falso (X bloques de Lorem Ipsum)
+
+
+        main.contenido>(h1.titulo+p.texto)+(ul>li*5{Item de Lista $))+footer.pie})
+
+        Apareceria lo de abajo
+     -->
+
+    <main class="contenido">
+        <h1 class="titulo"></h1>
+        <p class="texto"></p>
+        <ul>
+            <li>Item de Lista 1</li>
+            <li>Item de Lista 2</li>
+            <li>Item de Lista 3</li>
+            <li>Item de Lista 4</li>
+            <li>Item de Lista 5</li>
+        </ul>
+        <footer class="pie"></footer>
+    </main>
+</body>
+
+</html>
