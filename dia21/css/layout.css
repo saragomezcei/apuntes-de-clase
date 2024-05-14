@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "BlackNorth"; /* Nombre que le ponemos nosotros */
+    src: url(../fonts/Blacknorthdemo-mLE25.otf) format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.u-txtBlackNorth {
+    font-family: "BlackNorth";
+}
+
+.Main {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: gray;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+}
