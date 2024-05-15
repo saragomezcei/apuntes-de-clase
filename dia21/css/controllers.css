@@ -24,24 +24,33 @@
     --box-shadow: 1px 1px 5px rgb(255, 255, 255, 0.5);
 }
 
+
 /* --------------------------------------------------------------- */
 /*      Clases Reutilizables (Utilities)       */
 /* --------------------------------------------------------------- */
 
 .u-bgPrimary {
     background-color: var(--bg-primary);
+
+    transition: background-color 0.5s ease;
 }
 
 .u-bgSecondary {
     background-color: var(--bg-secondary);
+
+    transition: background-color 0.3s ease;
 }
 
 .u-txtPrimary {
     color: var(--txt-primary);
+
+    transition: background-color 0.3s ease;
 }
 
 .u-txtSecondary {
     color: var(--txt-secondary);
+
+    transition: background-color 0.3s ease;
 }
 
 .u-boxShadow {

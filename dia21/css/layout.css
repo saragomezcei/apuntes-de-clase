@@ -36,4 +36,5 @@ body {
     padding: 10px 20px;
     background: gray;
     box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+    z-index: 2;
 }

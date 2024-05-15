@@ -1,5 +1,176 @@
+/* ------------------------------------------------- */
+/*                    Variables                      */
+/* ------------------------------------------------- */
+
+:root {
+    --fb-color: #4267B2;
+    --x-color: #000;
+    --insta-color: #E1306C;
+    --linkedin-color: #2867B2;
+    --yt-color: #ff0000;
+    --sara-color: #ffd000;
+}
+
+/* ------------------------------------------------- */
+/*                                                   */
+/* ------------------------------------------------- */
+
 .Icons {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+.IconBox-link {
+    margin: 0 25px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+.IconBox-layers {
+    width: 55px;
+    height: 55px;
+
+    transition: transform 0.3s;
+}
+
+.IconBox:hover .IconBox-layers {
+    transform: rotate(-35deg) skew(20deg);
+}
+
+.IconBox-span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+/* ------------------------------------------------- */
+/*                   Layers                          */
+/* ------------------------------------------------- */
+
+.IconBox:hover .IconBox-span:nth-child(1) {
+    opacity: 0.2;
+}
+
+.IconBox:hover .IconBox-span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+}
+
+.IconBox:hover .IconBox-span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+}
+
+.IconBox:hover .IconBox-span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+
+.IconBox:hover .IconBox-span:nth-child(5) {
+    opacity: 1;
+    transform: translate(20px, -20px);
+}
+
+/* ------------------------------------------------- */
+/*              Colores de cada icono                */
+/* ------------------------------------------------- */
+
+.IconBox--fb .IconBox-span,
+.IconBox--fb .IconBox-text {
+    color: var(--fb-color);
+    border-color: var(--fb-color);
+}
+
+.IconBox--x .IconBox-span,
+.IconBox--x .IconBox-text {
+    color: var(--x-color);
+    border-color: var(--x-color);
+}
+
+.IconBox--ig .IconBox-span,
+.IconBox--ig .IconBox-text {
+    color: var(--insta-color);
+    border-color: var(--insta-color);
+}
+
+.IconBox--linkedin .IconBox-span,
+.IconBox--linkedin .IconBox-text {
+    color: var(--linkedin-color);
+    border-color: var(--linkedin-color);
+}
+
+.IconBox--yt .IconBox-span,
+.IconBox--yt .IconBox-text {
+    color: var(--yt-color);
+    border-color: var(--yt-color);
+}
+
+.IconBox--sara .IconBox-span,
+.IconBox--sara .IconBox-text {
+    color: var(--sara-color);
+    border-color: var(--sara-color);
+}
+
+/* Fix para el icono de TwitterX en DarkMode */
+.u-Dark {
+    --x-color: #fff;
+}
+
+
+/* ----------------------------------------------- */
+/* ----------- Sombras de layers ----------------- */
+/* ----------------------------------------------- */
+
+.IconBox--fb:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--fb-color);
+}
+
+.IconBox--x:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--x-color);
+}
+
+.IconBox--ig:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--insta-color);
+}
+
+.IconBox--linkedin:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--linkedin-color);
+}
+
+.IconBox--yt:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--yt-color);
+}
+
+.IconBox--sara:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--sara-color);
+}
+
+
+
+.IconBox-text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-weight: 500;
+    opacity: 0;
+    bottom: -5px;
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+
+.IconBox:hover .IconBox-text {
+    opacity: 1;
+    bottom: -35px;
+}
+
+.IconBox {
+    padding-bottom: 35px;
 }
