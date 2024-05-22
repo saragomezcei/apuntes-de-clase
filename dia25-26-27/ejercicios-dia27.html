@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios javaScript</title>
+</head>
+
+<body>
+    <h1>Ejercicios de JavaScript</h1>
+
+    <script>
+        //  1. Crear una función que reciba un número y devuelva si el número es par o impar.
+
+        let numero;
+
+        function ParImpar(numero) {
+            if (numero % 2 === 0) {
+                console.log("Es PAR");
+            }
+            else {
+                console.log("Es IMPAR");
+            }
+        };
+
+        let resultado;
+
+        resultado = ParImpar(44)
+        ParImpar(34);
+
+
+        //  2. Crear una función que reciba un número y me diga si es positivo, negativo o cero.
+
+        function PositivoNegativoCero(numero2) {
+            let respuesta; // undefined
+
+            if (numero2 == NaN) {
+                respuesta = "error";
+            }
+
+            if (numero2 == 0) {
+                respuesta = "El número es cero";
+            }
+
+            if (numero2 > 0) {
+                respuesta = "El número es positivo";
+            }
+
+            // else {
+            //     respuesta = "El número es negativo";
+            // }
+
+        // Si le pongo el else, como escanea linea a linea, sobreescribe el primer "if", por eso es mejor definir todas las opciones.
+
+            if (numero2 < 0) {
+                respuesta = "El número es negativo";
+            }
+
+            return respuesta;
+        };
+
+
+        //  3. Crear una función que me indica si es mayor o menor de edad.
+        let edad;
+
+        function MayorDeEdad(edad) {
+            if (edad == NaN) {
+                console.log("error");
+            }
+            if (edad >= 18) {
+                console.log("Es mayor de edad");
+            }
+            else {
+                console.log("Es menor de edad");
+            }
+        };
+       
+        //  4. Crear una función a la que si le indico el día de la semana me diga si es laboral o festivo.
+
+        let dia;
+
+        function DiaLaboral(dia) {
+            let respuesta; 
+
+            if (dia == "sábado" || dia == "domingo") {
+                respuesta = "Es festivo";
+            }
+            else {
+                respuesta = "Es laboral";
+            }
+
+            return respuesta;
+        };
+
+
+
+        //  5. Crear una función donde sus parámetros sean Jugador1 y Jugador2, y devuelva si el Jugador1 gana al Jugador2 en el juego piedra, papel o tijera.
+
+        let jugador1;
+        let jugador2;
+
+        function PiedraPapelTijera(jugador1, jugador2) {
+
+        }
+
+        //  6. Modificar la calculadora del día 25 para que podamos sumar, restar, multiplicar o dividir dos valores utilizando funciones.
+
+
+    </script>
+</body>
+
+</html>

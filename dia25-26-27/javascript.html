@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Bienvenidos a JavaScript</h1>
+
+    <button id="miBtnSuma">Suma 1</button>
+    <button id="miBtnResta">Resta 1</button>
+    <button id="miBtnMultiplica">Multiplica por 5</button>
+    <button id="miBtnDivide">Divide por 2</button>
+
+    <h3>Resultado</h3>
+    <div id="resultado">2</div>
+
+    <script>
+
+        //-------------------------------------------------------------------
+        // 1. Declaramos las variables y obtenemos nuestros tags del DOM
+        //-------------------------------------------------------------------
+
+        const miBotonSuma = document.getElementById("miBtnSuma");
+        const miBotonResta = document.getElementById("miBtnResta");
+        const miBotonMulti = document.getElementById("miBtnMultiplica");
+        const miBotonDivi = document.getElementById("miBtnDivide");
+
+
+        const divResultado = document.getElementById("resultado");
+
+        let numero = 2;
+
+
+
+
+        //-------------------------------------------------------------------
+        // 2. Manipulamos el DOM cuando hacemos click en los botones
+        //-------------------------------------------------------------------
+
+        miBotonSuma.addEventListener("click", () => {
+
+            numero = numero + 1; // incrementado el número en 1!!
+            divResultado.innerText = numero;
+        });
+
+        miBotonResta.addEventListener("click", () => {
+
+            numero = numero - 1;
+            divResultado.innerText = numero;
+        });
+
+        miBotonMulti.addEventListener("click", () => {
+
+            numero = numero * 5;
+            divResultado.innerText = numero;
+        });
+
+        miBotonDivi.addEventListener("click", () => {
+
+            numero = numero / 2;
+            divResultado.innerText = numero;
+        });
+    </script>
+</body>
+
+</html>

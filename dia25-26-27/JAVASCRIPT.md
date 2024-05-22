@@ -126,16 +126,19 @@ return a+b;
 ```js
 //PRIMITIVOS
 
+//Strings
 let texto="Hola alumnos de CEI";
 let textoConComillas='Hola estoy "bien"';
 let textoConComillasSimples= "I'm Tomy";
 let textoConBacktick= `Quiero usar comillas 'simples' y "dobles"`; //template Strings
 
+//Números
 let numero=3;
 let number=-54;
 let num=-43.9;
 let numeros= Number ("345"); // Cuando recibes unos números en formato de texto y los necesitas en formato número (en formato texto no puedes operar con ellos)
 
+//Booleanos
 let estaEncendido = false;
 let isPrimary = true;
 let onActive = false;
@@ -297,12 +300,12 @@ Si el resto de la división de un número por 2 es igual a 1 es IMPAR
 let numero = 10;
 
 let esPar = (numero % 2 === 0); // es true
-let esImpar = (numero & 2 !== 0); // es false
+let esImpar = (numero % 2 !== 0); // es false
 ```
 
 ### Operadores comparativos
 
-Se utilizan para comparar 2 valores en JS.
+Se utilizan para comparar 2 valores en JS. Es como si preguntaras ¿Es variable1 igual, diferente, mayor, menor (lo que sea) que variable2? Por tanto el resultado siempre será true o false.
 
 >El símbolo `=` por sí solo no compara, sino que asigna valores.
 
@@ -333,25 +336,138 @@ let esDistinto = ( num1 != num2 ) // true
 let estrictamenteDistinto = ( num1 !== num2 ) // false
 ```
 
-## Funciones
+### Operadores lógicos
 
-Es un bloque de código o algoritmo que realiza una operación/acción específica. Puede devolver un único resultado.
+Podemos verificar que múltiples operaciones sean verdaderas utilizando estos operadores:
+
+- `&&` (y) se tienen que cumplir todas las operaciones.
+- `||` (o) se tiene que cumplir alguna de las operaciones
+- `!` (no) si no se cumple
 
 ```js
+if (edad > 21 && acepteTyC == true) {
+    // Registrar al usuario;
+};
+
+if (dia == "sabado" || dia == "domingo") {
+    respuesta = "Es festivo";
+};
+
+if (numero%2 !== 0) {
+    respuesta = "Es impar";
+};
+
+if (!true) {
+    //false;
+}
+```
+
+## Funciones
+
+Es un bloque de código o algoritmo que realiza una operación/acción específica. Puede recibir valores de entrada (`parámetros`) y devolver un único resultado. A los valores que se pasan a la función cuando se invoca, se les llama `argumentos`.
+
+
+```js
+
+/**
+ * Función que saluda al usuario y le dice su nombre y edad.
+ * 
+ * @param {string} nombre - Nombre del usuario
+ * @param {number} edad - Edad del usuario
+ * 
+ * @return {void} - no devuelve nada
+ */
+
 function Saludar () {
     // código que va a realizar mi función, entre { }
     console.log("Hola a todos!! Mi nombre es");
 }
 
-function Saludar (nombre) {
+function Saludar (nombre, edad) {
     // código que va a realizar mi función, entre { }
-    console.log("Hola a todos!! Mi nombre es" + nombre);
+    console.log("Hola a todos!! Mi nombre es" + nombre + "y tengo" + edad + "años.");
+}
+
+function Saludar (nombre, edad) {
+
+    // 1. Creo una variable
+    let respuesta;
+    
+    // 2. Actualizo la variable
+    respuesta = ("Hola a todos!! Mi nombre es" + nombre + "y tengo" + edad + "años.");
+    
+    // 3. Devuelvo la variable actualizada
+    return respuesta;
 }
 
 // para ejecutarla 
 
 Saludar ();
 
-Saludar (Pedro);
-// Enviará "Hola a todos!!  Mi nombre es Pedro"
+Saludar (Pedro, 45); // Hola a todos!! Mi nombre es Pedro y tengo 45 años.
 
+let saludo;
+
+saludo = Saludar(Paula, 29);
+
+console.log(saludo);
+alert(saludo);
+```
+
+### Condicionales
+
+Son estructuras de control que nos permiten tomar decisiones. Si se cumple la condición, se ejecuta un bloque de código, y si no se cumple se ejecuta otro bloque de código.
+
+```js
+let numero = 7
+
+/**
+ * Me indica si el módulo (resto de la división) de 2 de un número es 0 para saber si es par o impar.
+ */
+
+if( numero % 2 === 0 ) {
+    console.log("El número es par")
+}
+
+else {
+    console.log("El número es impar")
+}
+
+
+let edad = 16
+// Saber si es mayor de edad
+if (edad >= 18) {
+    console.log("Es mayor de edad");
+}
+
+else {
+    console.log("Es menor de edad");
+}
+```
+
+### Ejercicios
+
+1. Crear una función que reciba un número y devuelva si el número es par o impar.
+2. Crear una función que reciba un número y me diga si es positivo, negativo o cero.
+3. Crear una función que me indica si es mayor o menor de edad.
+4. Crear una función a la que si le indico el día de la semana me diga si es laboral o festivo.
+5. Crear una función donde sus parámetros sean Jugador1 y Jugador2, y devuelva si el Jugador1 gana al Jugador2 en el juego piedra, papel o tijera.
+6. Modificar la calculadora del día 25 para que podamos sumar, restar, multiplicar o dividir dos valores utilizando funciones.
+
+## Uso de bucles
+
+Los bucles permiten repetir un código varias veces. En JS tenemos tres tipos de bucles:
+
+- `for`: se utiliza cuando sabemos cuántas veces queremos que se repita algo.
+- `while`:
+- `do-while`:
+
+```js
+// for (inicializador; condición; incremento)
+
+for (let contador = 0; contador < 10; contador++) {
+    //me voy a repetir muchas veces
+    console.log("HOLA!!");
+}
+
+```
