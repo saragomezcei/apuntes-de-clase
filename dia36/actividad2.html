@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 JSON</title>
+</head>
+
+<body>
+
+    <div id="contenedor">
+        <div>
+            <h2>Menú</h2>
+
+        </div>
+    </div>
+
+    <script>
+
+        //lista de JSON
+        const dataMenu = `{
+  "menu": [{
+      "nombre": "Bebidas",
+      "items": [
+            {
+            "nombre": "Coca-Cola",
+            "precio": 2.5
+            },
+            {
+            "nombre": "Jugo de Naranja",
+            "precio": 3.0
+            },
+            {
+            "nombre": "Agua Mineral",
+            "precio": 1.5
+            }]
+    },
+    {
+      "nombre": "Platos Principales",
+      "items": [
+            {
+            "nombre": "Hamburguesa",
+            "precio": 8.0
+            },
+            {
+            "nombre": "Pizza",
+            "precio": 10.0
+            },
+            {
+            "nombre": "Ensalada César",
+            "precio": 6.5
+            }]
+    },
+    {
+      "nombre": "Postres",
+      "items": [
+            {
+            "nombre": "Tiramisú",
+            "precio": 4.5
+            },
+            {
+            "nombre": "Cheesecake",
+            "precio": 5.0
+            },
+            {
+            "nombre": "Helado",
+            "precio": 3.0
+            }]
+    }]
+}`;
+
+        //Pasamos el JSON a JS
+
+        const objetoMenu = JSON.parse(dataMenu);
+
+        console.log(objetoMenu);
+
+        //Cogemos el div donde irá nuestro menú
+        const divContenedor = document.querySelector("#contenedor")
+
+        //Como objetoMenu en sí no es una lista, sino que es un objeto, entramos a la lista que hay dentro del objeto
+        const listaMenu = objetoMenu.menu;
+        listaMenu.forEach(seccion => {
+
+            console.log(seccion)
+            divContenedor.innerHTML += `            <h3>${seccion.nombre}</h3>`
+
+            
+                    const listaItems = seccion.items;
+                    listaItems.forEach(item => {
+                        divContenedor.innerHTML += `    <p>${item.nombre} <span>${item.precio}</span></p>`
+            
+                    });
+        });
+
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con JS</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+
+    <div>
+        <label>Valor 1 <br><input type="number" id="input1"></label>
+    </div>
+    <div>
+        <label>Valor 2 <br><input type="number" id="input2"></label>
+    </div>
+
+    <button id="BtnSuma" onclick="suma()">+</button>
+    <button id="BtnResta" onclick="resta()">-</button>
+    <button id="BtnMultiplica" onclick="multiplicacion()">*</button>
+    <button id="BtnDivide" onclick="division()">/</button>
+
+    <div>
+        Resultado
+        <span id="txtResultado"></span>
+    </div>
+
+    <script>
+        //1. Variables
+        const sumar = document.querySelector("#BtnSuma");
+        const restar = document.querySelector("#BtnResta");
+        const multiplicar = document.querySelector("#BtnMultiplica");
+        const dividir = document.querySelector("#BtnDivide");
+        const input1 = document.querySelector("#input1");
+        const input2 = document.querySelector("#input2");
+        const txtResultado = document.querySelector("#txtResultado");
+
+        let valor1 = "";
+        let valor2 = "";
+        let resultado;
+
+
+        //2. Funciones
+        function obtenerValores() {
+            valor1 = parseFloat(input1.value);
+            valor2 = parseFloat(input2.value);
+        }
+
+        function suma() {
+            obtenerValores();
+            resultado = valor1 + valor2;
+            txtResultado.innerText = resultado;
+        }
+
+        function resta() {
+            obtenerValores();
+            resultado = valor1 - valor2;
+            txtResultado.innerText = resultado;
+        }
+
+        function multiplicacion() {
+            obtenerValores();
+            resultado = valor1 * valor2;
+            txtResultado.innerText = resultado;
+        }
+
+        function division() {
+            obtenerValores();
+            resultado = valor1 / valor2;
+            txtResultado.innerText = resultado;
+        }
+
+        //3. Código
+
+
+    </script>
+</body>
+
+</html>

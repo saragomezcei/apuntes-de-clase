@@ -41,27 +41,27 @@
         // 2. Manipulamos el DOM cuando hacemos click en los botones
         //-------------------------------------------------------------------
 
-        miBotonSuma.addEventListener("click", () => {
+        miBotonSuma.addEventListener("click", (a, b) => {
 
-            numero = numero + 1; // incrementado el número en 1!!
+            numero = a + b; // incrementado el número en 1!!
             divResultado.innerText = numero;
         });
 
-        miBotonResta.addEventListener("click", () => {
+        miBotonResta.addEventListener("click", (a, b) => {
 
-            numero = numero - 1;
+            numero = a - b;
             divResultado.innerText = numero;
         });
 
-        miBotonMulti.addEventListener("click", () => {
+        miBotonMulti.addEventListener("click", (a, b) => {
 
-            numero = numero * 5;
+            numero = a * b;
             divResultado.innerText = numero;
         });
 
-        miBotonDivi.addEventListener("click", () => {
+        miBotonDivi.addEventListener("click", (a, b) => {
 
-            numero = numero / 2;
+            numero = a / b;
             divResultado.innerText = numero;
         });
     </script>

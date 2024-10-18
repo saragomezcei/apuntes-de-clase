@@ -51,7 +51,7 @@
             //     respuesta = "El número es negativo";
             // }
 
-        // Si le pongo el else, como escanea linea a linea, sobreescribe el primer "if", por eso es mejor definir todas las opciones.
+            // Si le pongo el else, como escanea linea a linea, sobreescribe el primer "if", por eso es mejor definir todas las opciones.
 
             if (numero2 < 0) {
                 respuesta = "El número es negativo";
@@ -75,13 +75,13 @@
                 console.log("Es menor de edad");
             }
         };
-       
+
         //  4. Crear una función a la que si le indico el día de la semana me diga si es laboral o festivo.
 
         let dia;
 
         function DiaLaboral(dia) {
-            let respuesta; 
+            let respuesta;
 
             if (dia == "sábado" || dia == "domingo") {
                 respuesta = "Es festivo";
@@ -101,8 +101,49 @@
         let jugador2;
 
         function PiedraPapelTijera(jugador1, jugador2) {
+            let resultado;
 
+            if (jugador1 == jugador2) {
+                resultado = "Empate"
+            } else if (jugador1 == "papel") {
+
+                if (jugador2 == "piedra") {
+                    resultado == "Gana el jugador 1"
+                } else {
+                    resultado = "Gana el jugador 2"
+                }
+
+            } else if (jugador1 == "piedra") {
+
+                if (jugador2 == "tijera") {
+                    resultado == "Gana el jugador 1"
+                } else {
+                    resultado = "Gana el jugador 2"
+                }
+
+            } else if (jugador1 == "tijera") {
+
+                if (jugador2 == "papel") {
+                    resultado == "Gana el jugador 1"
+                } else {
+                    resultado = "Gana el jugador 2"
+                }
+
+            // Operación ternaria
+            // pregunta ? se cumple : no se cumple;
+            resultado = (jugador2 == "piedra") ? "Gana Jugador 2" : "Gana Jugador 1";
+
+            } else {
+                resultado = "Datos inválidos"
+            }
+
+            return resultado;
         }
+
+        PiedraPapelTijera("piedra", "papel")
+        PiedraPapelTijera("tijera", "tijera")
+        PiedraPapelTijera("papel", "tijera")
+
 
         //  6. Modificar la calculadora del día 25 para que podamos sumar, restar, multiplicar o dividir dos valores utilizando funciones.
 

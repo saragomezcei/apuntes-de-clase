@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(247, 248, 255);
+    margin: 4rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.txtResultado {
+    border: 1px dashed black;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 3rem 0;
+}
+
+.btnJugar {
+    font-size: xx-large;
+    /* padding: 3rem; */
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(144, 135, 212);
+    color: white;
+
+}
+
+.btnJugar:hover {
+    cursor: pointer;
+
+}
+
+.resultados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.u-bgRed {
+    background-color: rgb(158, 31, 31);
+}
+
+.u-bgGreen {
+    background-color: rgb(40, 186, 24);
+}
+
+.u-bgGrey {
+    background-color: rgb(107, 107, 107);
+}
+
+.progressBar {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.progressBar-item {
+    color: white;
+    width: 0%;
+    transition: width 1s;
+}

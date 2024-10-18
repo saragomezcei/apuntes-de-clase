@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="pelicula"></div>
+    </div>
+
+    <script>
+        // JSON (este sí es una lista directamente)
+        const dataPeliculas = `[
+  {
+    "titulo": "Inception",
+    "genero": "Ciencia Ficción",
+    "puntaje": 8.8,
+    "descripcion": "Un ladrón que roba secretos corporativos a través del uso de tecnología de sueños es dado la tarea inversa de plantar una idea en la mente de un CEO.",
+    "imagen": "https://via.placeholder.com/150"
+  },
+  {
+    "titulo": "The Dark Knight",
+    "genero": "Acción",
+    "puntaje": 9.0,
+    "descripcion": "Cuando el Joker emerge como el nuevo villano del caos, Batman debe aceptar uno de los mayores desafíos psicológicos y físicos para combatir la injusticia.",
+    "imagen": "https://via.placeholder.com/150"
+  },
+  {
+    "titulo": "Interstellar",
+    "genero": "Aventura",
+    "puntaje": 8.6,
+    "descripcion": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de asegurar la supervivencia de la humanidad.",
+    "imagen": "https://via.placeholder.com/150"
+  }
+]`
+
+// Pasamos el JSON a JS
+const listaPeliculas = JSON.parse(dataPeliculas);
+
+// Cogemos el div "contenedor"
+const divContenedor = document.querySelector(".contenedor");
+const divPelicula = document.querySelector(".pelicula");
+
+listaPeliculas.forEach( pelicula => {
+
+    divContenedor.innerHTML += `<div class="peli">
+        <h3>${pelicula.titulo}</h3>
+    <img src="${pelicula.imagen}">
+    </div>`;
+});
+
+const pelis = document.querySelectorAll(".peli");
+
+pelis.forEach( peli => {
+    peli.addEventListener("click", ( event ) =>{
+            const divPelicula = event.target;
+            divPelicula.innerHTML += `    <div class="pelicula-detalles">
+    //         <p>Género: ${pelicula.genero}</p>
+    //         <p>Puntuación: ${pelicula.puntaje}</p>
+    //         <p>Descripción: ${pelicula.descripcion}</p>
+    //     </div>`;
+    })
+})
+    
+    
+    // divPelicula.addEventListener ("click", () => {
+    //     divPelicula.innerHTML += `    <div class="pelicula-detalles">
+    //         <p>Género: ${pelicula.genero}</p>
+    //         <p>Puntuación: ${pelicula.puntaje}</p>
+    //         <p>Descripción: ${pelicula.descripcion}</p>
+    //     </div>`;
+    // });
+    </script>
+
+
+</body>
+
+</html>

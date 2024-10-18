@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Piedra - papel - tijera</title>
+</head>
+
+<body>
+    <h1>Piedra - papel - tijera</h1>
+
+    <div class="txtResultado">
+        <h2>¡Empieza a jugar!</h2>
+        <p>Pulsa cualquier botón.</p>
+    </div>
+    <div class="main">
+        <div class="buttons">
+            <div class="btnPiedra">
+                <span>Piedra</p>
+                    <button class="btnJugar" onClick="jugar('piedra')">👊🏻</button>
+            </div>
+            <div class="btnPapel">
+                <p>Papel</p>
+                <button class="btnJugar" onClick="jugar('papel')">✋🏻</button>
+            </div>
+            <div class="btnTijera">
+                <p>Piedra</p>
+                <button class="btnJugar" onClick="jugar('tijera')">✌🏻</button>
+            </div>
+            <div class="btnAuto">
+                <p>Auto</p>
+                <button class="btnJugar" onClick="AIvsAI()">🤖vs🤖</button>
+            </div>
+        </div>
+
+        <button class="btnReset" onClick="resetStats()">RESET</button>
+
+        <div class="resultados">
+            <p>Ganadas: <br><span id="ganadas">0</span></p>
+            <p>Perdidas: <br><span id="perdidas">0</span></p>
+            <p>Empatadas: <br><span id="empatadas">0</span></p>
+        </div>
+    </div>
+
+    <hr>
+
+    Stats
+    <div class="txtStats">
+
+    </div>
+
+    <hr>
+
+    <p>Gráfica</p>
+    <div class="progressBar">
+        <div class="progressBar-item u-bgGreen"></div>
+        <div class="progressBar-item u-bgGrey"></div>
+        <div class="progressBar-item u-bgRed"></div>
+    </div>
+
+    <script src="./js/scripts.js"></script>
+
+</body>
+
+</html>

@@ -364,7 +364,7 @@ if (!true) {
 
 ## Funciones
 
-Es un bloque de código o algoritmo que realiza una operación/acción específica. Puede recibir valores de entrada (`parámetros`) y devolver un único resultado. A los valores que se pasan a la función cuando se invoca, se les llama `argumentos`.
+Es un bloque de código o algoritmo que realiza una operación/acción específica. Puede recibir valores de entrada (`parámetros`) y devolver un único resultado. A los valores que se pasan a la función cuando se invoca, se les llama `argumentos`. Tenemos la opción de inicializar un parámetro con un valor. Estos parámetros inicializados (los que tienen un valor asignado) deben ir al final de la lista.
 
 
 ```js
@@ -383,7 +383,7 @@ function Saludar () {
     console.log("Hola a todos!! Mi nombre es");
 }
 
-function Saludar (nombre, edad) {
+function Saludar (nombre, edad, genero = "No indicado") {
     // código que va a realizar mi función, entre { }
     console.log("Hola a todos!! Mi nombre es" + nombre + "y tengo" + edad + "años.");
 }
@@ -417,6 +417,10 @@ alert(saludo);
 ### Condicionales
 
 Son estructuras de control que nos permiten tomar decisiones. Si se cumple la condición, se ejecuta un bloque de código, y si no se cumple se ejecuta otro bloque de código.
+
+- El uso de `else` es opcional.
+- Se pueden anidar condicionales.
+- Se puede usar más de un `if`. No solamente es if + else, puedes tener varios if y ningún else, por ejemplo. CUIDADO!!! Se procesan línea a línea, por lo que si la condición de abajo anula la de arriba se cumplirá la de abajo (ver ejemplo ejercicio 2 javascript)
 
 ```js
 let numero = 7
@@ -458,11 +462,13 @@ else {
 
 Los bucles permiten repetir un código varias veces. En JS tenemos tres tipos de bucles:
 
-- `for`: se utiliza cuando sabemos cuántas veces queremos que se repita algo.
-- `while`:
-- `do-while`:
+- `for`: se utiliza cuando sabemos cuántas veces queremos que se repita algo. ( Es el más utilizado )
+- `while`: se utiliza cuando no sabemos cuántas veces se va a repetir el bloque de código. 
+- `do-while`: es igual a "while" pero se ejecuta al menos una vez.
 
 ```js
+
+//BUCLE FOR
 // for (inicializador; condición; incremento)
 
 for (let contador = 0; contador < 10; contador++) {
@@ -470,4 +476,135 @@ for (let contador = 0; contador < 10; contador++) {
     console.log("HOLA!!");
 }
 
+
+// BUCLE WHILE
+let i = 0;
+while (i < 10) {
+    console.log("Hello!");
+    i++
+}
+
+let salir = false;
+// while (salir == false) es lo mismo que:
+while (!salir) {
+    console.log("Me quedo jugando");
+    ...
+    ...
+    salir = true;
+}
+
+
+// BUCLE DO-WHILE
+// Se ejecuta al menos una vez
+let i = 0;
+
+do {
+    console.log("Holi");
+} while (i < 5);
+
+```
+
+## Math
+
+El objeto `Math` nos proporciona propiedades y métodos para realizar operaciones. Los más comunes son:
+
+- Math.random(): Devuelve un número pseudo-aleatorio entre 0 y 1.
+- Math.round(): Devuelve el valor de un número redondeado al entero más cercano.
+- Math.ceil(): Redondea para arriba.
+- Math.floor(): Redondea para abajo.
+- Math.abs(): Devuelve el número absoluto de un número.
+
+```js
+
+let numero = 3.1416
+
+let numeroRedondeadoEntero = Math.round(numero); // 3
+
+let numeroRedondeadoArriba = Math.ceil(numero); // 4
+
+let numeroRedondeadoAbajo = Math.floor(numero); // 3
+
+let numeroDosDigitos = Math.round(numero * 100)/100;
+
+```
+
+
+## Interpolación de variables (Template strings)
+
+Es una forma de concatenar strings y variables de forma legible. Se utiliza el acento abierto `backticks` para delimitar el string y ${} para insertar la variable.
+
+Entre los beneficios tenemos:
+- Lectura mucho más sencilla.
+- Uso de variables en nuestro string.
+- Posibilidad de escribir múltiples líneas de texto.
+- Realizar operaciones dentro de un string.
+
+```js
+// Método tradicional
+
+let nombre = "Juan";
+let contenido = "<div class='caja'>"+
+                "<h1>Hola a todos, mi nombre es" +nombre+ "</h1>"+
+                "</div>";
+
+// Método nuevo
+
+let nombre = "Juan";
+let edad = 31;
+let contenido = `<div class='caja'>
+                <h1>Hola a todos, mi nombre es ${nombre} </h1>
+                </div>`;
+
+let mensaje = `Hola, me llamo ${nombre} y voy a cumplir ${edad +1} años!`;
+
+```
+
+<!-- Día 29 - viernes 24 de mayo -->
+## Objetos
+
+Un objeto es una colección de propiedades, todas tienen sus respectivos nombres (claves) y valores. Sus valores pueden ser de todo tipo: números, strings, variables, funciones, otros objetos... En el caso de las funciones, a estas propiedades se les llama métodos.
+
+```js
+const miObjeto = {
+    propiedad1: "valor1",
+    propiedad2: 2,
+    propiedad3: false,
+    metodoSumar: function (num1, num2) {return num1 + num2},
+    metodo2: function () {},
+    //otras propiedades...
+}
+```
+
+Podemos acceder a las propiedades del objeto desde sus métodos utilizando `this`. El uso de `this` hace referencia a él mismo para acceder a sus valores.
+
+```js
+const miCoche = {
+    marca: "Tesla",
+    modelo: "ModelX",
+    kmsRecorridos: 7777,
+    color: "negro",
+    //métodos:
+    encender: function () {
+        //uso de "this" para acceder a los kms actuales
+        const kms = this.kmsRecorridos;
+        console.log(`Arrancando el coche con ${kms} kms`)
+    },
+    //otro método
+    buscarme: function (positionGPS) {
+        console.log(`Manejar automáticamente hasta la posición de GPS ${positionGPS}`)
+    }
+}
+
+//leer los kms recorridos
+const kilometros = coche.kmsRecorridos;
+
+//Escribir nuevos kms recorridos
+coche.kmsRecorridos = kilometros + 5
+
+// Pintar el Tesla de rojo
+coche.color = "rojo";
+
+// Para ejecutar métodos
+coche.encender();
+coche.buscarme();
 ```

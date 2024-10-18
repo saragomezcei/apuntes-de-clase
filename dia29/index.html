@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Objeto</title>
+
+    <style>
+        .flexContainer {
+            display: flex;
+        }
+
+        .miCaja {
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo de Objeto</h1>
+
+    <div class="flexContainer">
+        <div class="miCaja" id="miCaja1">Soy un Div</div>
+        <div class="miCaja" id="miCaja2">Soy un Div</div>
+    </div>
+
+    <script>
+
+        //variable GLOBAL (en todo el código)
+        let nombre = "Sara";
+
+        function MiNombre() {
+            //variable LOCAL (dentro de la función)
+            let apellido = "GP";
+
+            if (nombre = "Sara") {
+                //variable de BLOQUE (para FOR - WHILE - IF - DOWHILE)
+                let saludar = true;
+
+                console.log(nombre) // Sara
+                console.log(apellido) // GP
+                console.log(saludar) // true
+            }
+
+            console.log(nombre) // Sara
+            console.log(apellido) // GP
+            console.log(saludar) // Undefined
+        }
+
+        console.log(nombre) // Sara
+        console.log(apellido) // Undefined
+        console.log(saludar) // Undefined
+
+    </script>
+
+
+
+    <script>
+
+        //1. Definir variables
+        const myDiv1 = document.getElementById("miCaja1");
+        const myDiv2 = document.getElementById("miCaja2");
+        const container = document.querySelector(".flexContainer");
+
+        const divChanger = {
+            objetoACambiar: null,
+            cambiarAncho: function (ancho) {
+                this.objetoACambiar.style.width = ancho;
+
+            },
+            cambiarAlto: function (alto) {
+                this.objetoACambiar.style.height = alto;
+
+            },
+            cambiarAnchoYAlto: function (medida) {
+                this.objetoACambiar.style.width = medida;
+                this.objetoACambiar.style.height = medida;
+            },
+            cambiarFondo: function (url) {
+                this.objetoACambiar.style.backgroundImage = `url(${url})`;
+                this.objetoACambiar.style.backgroundSize = "cover";
+                this.objetoACambiar.style.backgroundPosition = "center";
+            }
+        }
+
+        //2. Crear funciones
+
+        // 3. Ejecutar código
+        myDiv1.style.border = "1px solid black";
+        myDiv1.innerText = "Contenido de caja 1 modificado con JavaScript";
+
+        // ---- Utilizando objetos
+        divChanger.objetoACambiar = myDiv1;
+        divChanger.cambiarAncho("200px");
+
+        divChanger.objetoACambiar = myDiv2;
+        divChanger.cambiarAnchoYAlto("400px");
+
+        divChanger.cambiarFondo("https://images.unsplash.com/photo-1714116166319-faf1713557ab?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+
+    </script>
+</body>
+
+</html>

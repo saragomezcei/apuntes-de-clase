@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades JSON</title>
+    <style>
+        .tarjeta {
+            border: 1px solid black;
+            padding: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        Cargando usuarios...
+
+    </div>
+
+    <script>
+        // Este JSON devuelve una lista porque está entre corchetes "[]"
+        const dataUsuarios= `[{
+    "nombre": "Juan Pérez",
+    "edad": 28,
+    "correo": "juan.perez@example.com"
+  },
+  {
+    "nombre": "Ana Gómez",
+    "edad": 34,
+    "correo": "ana.gomez@example.com"
+  },
+  {
+    "nombre": "Luis Torres",
+    "edad": 23,
+    "correo": "luis.torres@example.com"
+  }]`;
+
+  //Convertir mi JSON a un objeto de JS
+  const listaUsuarios = JSON.parse(dataUsuarios);
+
+  
+  const divContenedor = document.querySelector("#contenedor");
+  
+  //BUCLES: do, while, for, foreach...
+  divContenedor.innerHTML="";
+  listaUsuarios.forEach(usuario => {
+      
+      divContenedor.innerHTML += `        <div class="tarjeta">
+                <h3>${usuario.nombre}</h3>
+                <p>Edad: ${usuario.edad}</p>
+                <p>Correo electrónico: ${usuario.correo}</p>
+            </div>`;
+  });
+  
+    </script>
+</body>
+</html>

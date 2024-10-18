@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeon</title>
+    <style>
+        .acordion {
+            border: 1px solid black;
+        }
+
+        .acordion-item {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        .acordion-content {
+            display: none;
+        }
+
+        .acordion-header {
+            background-color: pink;
+        }
+
+        .active .acordion-content {
+            display: block;
+        }
+
+        .active .acordion-header {
+            background-color: rgb(138, 222, 252);
+        }
+    </style>
+</head>
+<body>
+    <div class="acordion">
+        <div class="acordion-item">
+            <div class="acordion-header">Sección 1</div>
+            <div class="acordion-content">Contenido de la sección 1</div>
+        </div>
+        <div class="acordion-item">
+            <div class="acordion-header">Sección 2</div>
+            <div class="acordion-content">Contenido de la sección 2</div>
+        </div>
+        <div class="acordion-item">
+            <div class="acordion-header">Sección 3</div>
+            <div class="acordion-content">Contenido de la sección 3</div>
+        </div>
+    </div>
+
+
+<script>
+    //1. Declarar variables y elementos
+    const acordeon = document.querySelector(".acordion");
+    const headers = document.querySelectorAll(".acordion-header")
+    const acordionItems = document.querySelectorAll(".acordion-item");
+
+    //2. Funciones
+    headers.forEach(header => {
+        header.addEventListener("click", () => {
+
+            const item = header.closest(".acordion-item");
+            //cerrar todos los content
+            //acordionItems.forEach (elemento => {
+            //    elemento.classList.remove("active");
+            //})
+                cerrarTodas();
+            
+            //abrir el content al que le hice click
+            //Para poder abrir y cerrar cambiaríamos "add" por "toggle"
+            item.classList.add("active");
+        })
+    })
+
+    function cerrarTodas () {
+        acordionItems.forEach (elemento => {
+                elemento.classList.remove("active");
+            })
+    }
+
+    //3. Ejecutar el código
+    //acordionItems[2].classList.add("active");
+
+</script>
+</body>
+</html>
